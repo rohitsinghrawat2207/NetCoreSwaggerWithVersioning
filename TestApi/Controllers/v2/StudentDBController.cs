@@ -3,9 +3,9 @@ using TestApi.ServiceLayer;
 using TestApi.ServiceLayer.Abstraction;
 using TestApi.Model;
 
-namespace TestApi.Controllers
+namespace TestApi.Controllers.v2
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class StudentDBController : ControllerBase
     {
@@ -77,7 +77,7 @@ namespace TestApi.Controllers
             }
         }
 
-     
+
 
     }
 }

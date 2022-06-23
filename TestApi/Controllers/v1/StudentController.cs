@@ -2,19 +2,23 @@
 using Microsoft.AspNetCore.Mvc;
 using TestApi.Model;
 
-namespace TestApi.Controllers
+namespace TestApi.Controllers.v1
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    //[ApiVersion("1.0")]
+    //[ApiVersion("2.0")]
     public class StudentController : ControllerBase
     {
         public static List<StudentTest> stu = new List<StudentTest>();
         [HttpGet("GetAllStudents")]
+        [MapToApiVersion("1.0")]
         public async Task<ActionResult<List<StudentTest>>> Get()
         {
             return Ok(stu);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpGet("GetStudent/{StudentId}")]
         public async Task<ActionResult<List<StudentTest>>> Get(int StudentId)
         {
@@ -27,6 +31,7 @@ namespace TestApi.Controllers
             return Ok(stud);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpPost("AddStudent")]
         public async Task<ActionResult<List<StudentTest>>> Post(StudentTest objstudent)
         {
@@ -34,6 +39,7 @@ namespace TestApi.Controllers
             return Ok(stu);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpPut("UpdateStudent")]
         public async Task<ActionResult<List<StudentTest>>> Put(StudentTest objstudent)
         {
@@ -49,6 +55,7 @@ namespace TestApi.Controllers
             return Ok(stu);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpDelete("DeleteStudent")]
         public async Task<ActionResult<List<StudentTest>>> Delete(StudentTest objstudent)
         {
