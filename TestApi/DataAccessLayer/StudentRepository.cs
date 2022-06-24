@@ -1,13 +1,13 @@
 ﻿using TestApi.Model;
-using TestApi.Repository.Abstraction;
+using TestApi.DataAccessLayer.Abstraction;
 
-namespace TestApi.Repository
+namespace TestApi.DataAccessLayer
 {
-    public class StudentRepository : IStudentRepository
+    public class StudentDataAccessLayer : IStudentDataAccessLayer
     {
         private StudentDBContext _dbcontext;
 
-        public StudentRepository(StudentDBContext dbcontext)
+        public StudentDataAccessLayer(StudentDBContext dbcontext)
         {
             _dbcontext = dbcontext;
         }

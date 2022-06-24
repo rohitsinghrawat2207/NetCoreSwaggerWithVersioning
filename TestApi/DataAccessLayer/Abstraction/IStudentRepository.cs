@@ -1,8 +1,8 @@
 ﻿using TestApi.Model;
 
-namespace TestApi.Repository.Abstraction
+namespace TestApi.DataAccessLayer.Abstraction
 {
-    public interface IStudentRepository
+    public interface IStudentDataAccessLayer
     {
         List<Student> GetStudents();
         Student GetStudent(int id);

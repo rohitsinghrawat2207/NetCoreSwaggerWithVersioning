@@ -1,13 +1,13 @@
 ﻿using TestApi.Model;
 using TestApi.ServiceLayer.Abstraction;
-using TestApi.Repository.Abstraction;
+using TestApi.DataAccessLayer.Abstraction;
 namespace TestApi.ServiceLayer
 {
     public class StudentService : IStudentService
     {
-        private readonly IStudentRepository _repo;
+        private readonly IStudentDataAccessLayer _repo;
 
-        public StudentService(IStudentRepository repo)
+        public StudentService(IStudentDataAccessLayer repo)
         {
             _repo = repo;
         }

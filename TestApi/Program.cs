@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TestApi.ServiceLayer;
 using TestApi.ServiceLayer.Abstraction;
-using TestApi.Repository.Abstraction;
-using TestApi.Repository;
+using TestApi.DataAccessLayer.Abstraction;
+using TestApi.DataAccessLayer;
 using TestApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -88,7 +88,7 @@ builder.Services.AddVersionedApiExplorer(setup =>
 });
 
 builder.Services.AddScoped<IStudentService, StudentService>();
-builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IStudentDataAccessLayer, StudentDataAccessLayer>();
 
 var app = builder.Build();
 
